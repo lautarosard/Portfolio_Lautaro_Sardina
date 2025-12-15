@@ -21,31 +21,39 @@ const Header = () => {
     ];
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-dark/80 backdrop-blur-md border-b border-gray-800 py-4' : 'bg-transparent py-6'}`}>
+        <header
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
+                    ? 'bg-dark/80 backdrop-blur-md border-b border-primary/10 py-4 shadow-lg shadow-black/20'
+                    : 'bg-transparent py-6'
+                }`}
+        >
             <div className="container mx-auto px-4 flex justify-between items-center">
-                <a href="#" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <a href="#" className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:brightness-125 transition-all">
                     Portfolio
                 </a>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    <ul className="flex space-x-8 text-sm font-medium text-gray-300">
+                    <ul className="flex space-x-8 text-sm font-medium text-light/80">
                         {navLinks.map((link) => (
                             <li key={link.name}>
-                                <a href={link.href} className="hover:text-primary transition-colors">
+                                <a href={link.href} className="hover:text-primary transition-colors hover:scale-105 transform inline-block">
                                     {link.name}
                                 </a>
                             </li>
                         ))}
                     </ul>
-                    <div className="flex items-center gap-4 pl-8 border-l border-gray-700">
-                        <SocialLink href="#" icon={<Github size={18} />} />
-                        <SocialLink href="#" icon={<Linkedin size={18} />} />
+                    <div className="flex items-center gap-4 pl-8 border-l border-white/10">
+                        <SocialLink href="https://github.com/lautarosard" icon={<Github size={18} />} />
+                        <SocialLink href="https://linkedin.com/in/ariel-lautaro-sardina" icon={<Linkedin size={18} />} />
                     </div>
                 </nav>
 
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+                <button
+                    className="md:hidden text-light hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
@@ -57,23 +65,23 @@ const Header = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-dark border-b border-gray-800 overflow-hidden"
+                        className="md:hidden bg-dark border-b border-primary/20 overflow-hidden"
                     >
                         <div className="container mx-auto px-4 py-8 flex flex-col gap-6">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-medium text-gray-300 hover:text-primary transition-colors"
+                                    className="text-lg font-medium text-light/90 hover:text-primary transition-colors pl-4 border-l-2 border-transparent hover:border-primary"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <div className="flex gap-6 pt-4 border-t border-gray-800">
-                                <SocialLink href="#" icon={<Github size={20} />} />
-                                <SocialLink href="#" icon={<Linkedin size={20} />} />
-                                <SocialLink href="#" icon={<Mail size={20} />} />
+                            <div className="flex gap-6 pt-6 border-t border-white/10 justify-center">
+                                <SocialLink href="https://github.com/lautarosard" icon={<Github size={20} />} />
+                                <SocialLink href="https://linkedin.com/in/ariel-lautaro-sardina" icon={<Linkedin size={20} />} />
+                                <SocialLink href="mailto:lautarosardina@gmail.com" icon={<Mail size={20} />} />
                             </div>
                         </div>
                     </motion.div>
@@ -86,7 +94,9 @@ const Header = () => {
 const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
     <a
         href={href}
-        className="text-gray-400 hover:text-white transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-light/60 hover:text-primary transition-colors hover:-translate-y-0.5 transform duration-300"
     >
         {icon}
     </a>

@@ -1,11 +1,10 @@
-
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark">
-            {/* Background Gradient Blob */}
+        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark text-light">
+            {/* Fondos degradados suaves */}
             <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-secondary/20 rounded-full blur-[120px] pointer-events-none" />
 
@@ -16,34 +15,44 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-xl md:text-2xl font-medium text-primary mb-4 tracking-wide uppercase">
-                        Hello, World.
+                        Hola, soy
                     </h2>
+
+                    {/* CAMBIA 'Tu Nombre' POR TU NOMBRE REAL */}
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                        I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Lauta</span>
+                        <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            Ariel Lautaro Sardina
+                        </span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        A creative Full Stack Developer crafting <span className="text-white">beautiful</span> and <span className="text-white">performant</span> web experiences.
+
+                    {/* DESCRIPCIÓN AJUSTADA A TU PERFIL */}
+                    <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        <span className="text-white font-semibold">Software Developer</span> especializado en Backend.
+                        <br />
+                        Creo soluciones robustas y escalables, con la capacidad de integrarlas en interfaces modernas.
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                         <a
                             href="#projects"
-                            className="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg shadow-blue-500/25 transform hover:scale-105"
+                            className="bg-primary hover:brightness-110 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg shadow-primary/25 transform hover:scale-105"
                         >
-                            View My Work
+                            Ver Proyectos
                         </a>
                         <a
                             href="#contact"
-                            className="border border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-3 rounded-full font-semibold transition-all hover:bg-white/5"
+                            className="border border-gray-600 hover:border-light text-gray-300 hover:text-white px-8 py-3 rounded-full font-semibold transition-all hover:bg-white/5"
                         >
-                            Contact Me
+                            Contactar
                         </a>
                     </div>
 
                     <div className="mt-12 flex items-center justify-center gap-6">
-                        <SocialLink href="https://github.com" icon={<Github size={24} />} />
-                        <SocialLink href="https://linkedin.com" icon={<Linkedin size={24} />} />
-                        <SocialLink href="mailto:email@example.com" icon={<Mail size={24} />} />
+                        {/* RECUERDA: Estos links se actualizan en el componente SocialLink abajo si quieres cambiarlos globalmente, 
+                            o puedes ponerlos directos aquí */}
+                        <SocialLink href="https://github.com/lautarosard" icon={<Github size={24} />} />
+                        <SocialLink href="https://linkedin.com/in/ariel-lautaro-sardina" icon={<Linkedin size={24} />} />
+                        <SocialLink href="mailto:lautarosardina@gmail.com" icon={<Mail size={24} />} />
                     </div>
                 </motion.div>
             </div>

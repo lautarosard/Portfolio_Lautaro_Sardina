@@ -1,19 +1,29 @@
-
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { Github, Linkedin, Twitter, Flame } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="py-12 bg-slate-950 border-t border-slate-900 text-center">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-center gap-6 mb-8">
-                    <SocialLink href="#" icon={<Github size={20} />} />
-                    <SocialLink href="#" icon={<Linkedin size={20} />} />
-                    <SocialLink href="#" icon={<Twitter size={20} />} />
+        <footer className="py-12 bg-dark border-t border-primary/10 text-center relative overflow-hidden">
+            {/* Decoración sutil superior para efecto 'glow' */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="flex justify-center gap-8 mb-8">
+                    {/* Actualiza los href con tus links reales */}
+                    <SocialLink href="https://github.com/lautarosard" icon={<Github size={22} />} />
+                    <SocialLink href="https://linkedin.com/in/ariel-lautaro-sardina" icon={<Linkedin size={22} />} />
+                    {/* Si no usas Twitter, puedes quitarlo o cambiarlo por otro */}
+                    <SocialLink href="#" icon={<Twitter size={22} />} />
                 </div>
-                <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
-                    &copy; {new Date().getFullYear()} Designed & Built by Lau.
+
+                <p className="text-light/40 text-sm flex items-center justify-center gap-2">
+                    &copy; {new Date().getFullYear()} Designed & Built with
+                    <Flame size={14} className="text-primary animate-pulse" fill="currentColor" />
+                    by <span className="text-light/80 font-medium">Lautaro</span>.
                 </p>
             </div>
+
+            {/* Fondo de luz sutil en la parte inferior */}
+            <div className="absolute bottom-[-50%] left-1/2 -translate-x-1/2 w-[40%] h-[100px] bg-primary/10 blur-[80px] rounded-full pointer-events-none" />
         </footer>
     );
 };
@@ -21,7 +31,9 @@ const Footer = () => {
 const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
     <a
         href={href}
-        className="text-gray-400 hover:text-primary transition-colors hover:-translate-y-1 transform duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-light/50 hover:text-primary hover:bg-primary/10 p-3 rounded-full transition-all duration-300 hover:-translate-y-1"
     >
         {icon}
     </a>

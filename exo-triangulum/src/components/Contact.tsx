@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
@@ -17,16 +17,16 @@ const Contact = () => {
 
                     {/* Botón de Email */}
                     <a
-                        href="mailto:tu-email@ejemplo.com"
+                        href="mailto:lautarosardina@gmail.com"
                         className="flex items-center gap-3 px-6 py-4 bg-gray-800 hover:bg-primary transition-colors duration-300 rounded-lg shadow-lg group"
                     >
                         <Mail className="w-6 h-6 text-primary group-hover:text-white" />
-                        <span className="font-medium">tu-email@ejemplo.com</span>
+                        <span className="font-medium">lautarosardina@gmail.com</span>
                     </a>
 
                     {/* Botón de LinkedIn */}
                     <a
-                        href="https://linkedin.com/in/tu-usuario"
+                        href="https://linkedin.com/in/ariel-lautaro-sardina"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 px-6 py-4 bg-gray-800 hover:bg-[#0077b5] transition-colors duration-300 rounded-lg shadow-lg group"
@@ -37,7 +37,7 @@ const Contact = () => {
 
                     {/* Botón de GitHub */}
                     <a
-                        href="https://github.com/tu-usuario"
+                        href="https://github.com/lautarosard"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 px-6 py-4 bg-gray-800 hover:bg-black transition-colors duration-300 rounded-lg shadow-lg group"
